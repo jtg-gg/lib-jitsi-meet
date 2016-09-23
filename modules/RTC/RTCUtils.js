@@ -911,7 +911,8 @@ var RTCUtils = {
         logger.info("Get media constraints", constraints);
 
         try {
-            this.getUserMedia(constraints,
+            var this_getUserMedia = this ? this.getUserMedia : getUserMedia;
+            this_getUserMedia(constraints,
                 function (stream) {
                     logger.log('onUserMediaSuccess');
                     setAvailableDevices(um, stream);
