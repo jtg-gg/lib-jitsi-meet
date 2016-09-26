@@ -193,6 +193,13 @@ Moderator.prototype.createConferenceIq =  function () {
                 value: this.options.conference.startBitrate
             }).up();
     }
+    if (this.options.conference.videoCodec) {
+        elem.c(
+            'property', {
+                name: 'videoCodec',
+                value: this.options.conference.videoCodec
+            }).up();
+    }
     if (this.options.conference.minBitrate) {
         elem.c(
             'property', {
